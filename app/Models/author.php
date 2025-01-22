@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class author extends Model
 {
-    protected $table = 'authors';
-    protected $fillable = ['author','birth'];
-
     function book()
     {
         return $this->hasOne(Book::class);
