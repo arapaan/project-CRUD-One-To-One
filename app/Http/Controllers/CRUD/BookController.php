@@ -77,8 +77,8 @@ class BookController extends Controller
         'name' => 'required|min:3',
         'date' => 'required|date'
     ], [
-        'name.required' => 'Nama hobi harus diisi',
-        'name.min' => 'Nama hobi minimal 3 karakter',
+        'name.required' => 'Nama buku harus diisi',
+        'name.min' => 'Nama buku minimal 3 karakter',
     ]);
 
     // Temukan item berdasarkan ID
