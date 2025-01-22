@@ -15,7 +15,7 @@ class BookController extends Controller
     public function index()
     {
         $data = book::with('author')->get();
-        $authors = author::all();
+        $authors = author::whereDoesntHave('book');
         return view('CRUD.book',compact('data','authors'));
     }
 
