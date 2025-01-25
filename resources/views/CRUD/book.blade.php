@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel dengan PHP</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="d-flex justify-content-center">Data Buku</h1>
+@include('layout.header')
+<h1 class="d-flex justify-content-center">Data Buku</h1>
   @if (@session('success'))
       <div class="alert alert-success">
         {{ session('success') }}  
@@ -34,7 +26,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form method="POST" action="{{ route('CRUD.post') }}">
+                <form method="POST" action="{{ route('CRUD.store') }}">
                   @csrf
                     <input type="text" name="name" placeholder="Masukkan nama buku" required value="{{ old('name') }}"> <br>
                     <p>Masukkan tanggal penerbitan:</p>
@@ -114,8 +106,4 @@
         </table>
         </div>
 
-    <!-- Bootstrap JS Bundle (popper.js included) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
-    </script>
-</body>
-</html>
+@include('layout.footer')

@@ -48,7 +48,7 @@ class BookController extends Controller
         ];
         Book::create($data);
 
-        return redirect()->route('CRUD')->with('success','berhasil menambahkan data');
+        return redirect()->route('CRUD.index')->with('success','berhasil menambahkan data');
     }
 
     /**
@@ -89,7 +89,7 @@ class BookController extends Controller
     $book->save(); // Simpan perubahan ke database
 
     // Redirect kembali ke halaman dengan pesan sukses
-    return redirect()->route('CRUD')->with('success', 'Berhasil mengubah');
+    return redirect()->route('CRUD.index')->with('success', 'Berhasil mengubah');
     }
 
     /**
@@ -99,6 +99,6 @@ class BookController extends Controller
     {
         Book::where('id',$id)->delete();
 
-        return redirect()->route('CRUD')->with('success', 'Berhasil menghapus');
+        return redirect()->route('CRUD.index')->with('success', 'Berhasil menghapus');
     }
 }
